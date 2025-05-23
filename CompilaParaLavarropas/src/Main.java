@@ -14,6 +14,21 @@ public class Main {
 		
 		//Comentario de ejemplo - push a main
 		
+		double dato = 1.242141515;
+		
+		System.out.println("Este es un mensaje de Merge");
+		
+		//comentario intercalado
+		
+		System.out.println("Este es un mensaje de Merge");
+		
+		//comentario intercalado
+		
+		System.out.println("Este es un mensaje de Merge");
+		
+		//comentario intercalado
+		
+		System.out.println("Este es un mensaje de Merge");
 	}
 
 }
