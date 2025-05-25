@@ -1,7 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.awt.Image;
-import java.awt.Toolkit;
 
 import Clases.Graficos;
 import Clases.Lavarropas;
@@ -70,55 +68,37 @@ public class Main {
 		//Codificacion en base al hardware especifico del dispositivo electronico
 		//...........
 		
+		/*
 		Lavarropas.getLavarropas("LG").encender("Lavado Suave");
 		Lavarropas.getLavarropas("Drean").encender("Enjuague");
 		Lavarropas.getLavarropas("Samsung").encender("Prendas Blancas");
 		Lavarropas.getLavarropas("Whirlpool Corporation").encender("Prendas delicadas");
 		Lavarropas.getLavarropas("KOH-I-NOOR A655 Linea Acero").encender("Centrifugado");
+		*/
 		
 		//Con Chuavechito Vivere, llegas.
 		
-		Image imagen = Toolkit.getDefaultToolkit().getImage("imagenes/LavarropasJPG.jpg");
-		
-		imagen = imagen.getScaledInstance(800, 600, Image.SCALE_FAST);
 		Graficos ventana = new Graficos();
-		ventana.setImagen(imagen);
-		ventana.activar();
+		/*
+		Graficos.agregar("imagenes/LavarropasJPG.jpg");
+		Graficos.agregar("imagenes/Samsung.jpg");
+		Graficos.agregar("imagenes/Lavarropas/Whirpool.jpg");
+		Graficos.agregar("imagenes/Lavarropas/KOH-I-NOOR.jpg");
+		Graficos.agregar("imagenes/Lavarropas/KOH-I-NOOR A655 Linea Acero.jpg");
+		Graficos.agregar("imagenes/Lavarropas/Samsung.jpg");
+		Graficos.agregar("imagenes/Lavarropas/Drean.jpg");
+		Graficos.agregar("imagenes/Lavarropas/LG.jpg");
+		Graficos.agregar("imagenes/Lavarropas/White-Westtinghouse.jpg");
+		*/
 		
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		imagen = Toolkit.getDefaultToolkit().getImage("imagenes/Samsung.jpg");
-		imagen = imagen.getScaledInstance(800, 600, Image.SCALE_FAST);
-		ventana.setImagen(imagen);
-		ventana.repaint();
+		Graficos.agregar("imagenes/Lavarropas/Lavanderia.jpg");
 		
-		List<String> rutaImagenes = new ArrayList<String>();
-		rutaImagenes.add("imagenes/Lavarropas/Whirpool.jpg");
-		rutaImagenes.add("imagenes/Lavarropas/KOH-I-NOOR.jpg");
-		rutaImagenes.add("imagenes/Lavarropas/KOH-I-NOOR A655 Linea Acero.jpg");
-		rutaImagenes.add("imagenes/Lavarropas/Samsung.jpg");
-		rutaImagenes.add("imagenes/Lavarropas/Drean.jpg");
-		rutaImagenes.add("imagenes/Lavarropas/LG.jpg");
-		rutaImagenes.add("imagenes/Lavarropas/White-Westtinghouse.jpg");
-		rutaImagenes.add("imagenes/Lavarropas/Lavanderia.jpg");
-		
-		for (String rutaImagen : rutaImagenes) {
-			
-			try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
+		for (String rutaImagen : Graficos.getRutaImagenes()) 
+		{
 			ventana.setImagen(rutaImagen);
-			ventana.repaint();
 		}
+		
+		Graficos.botonesVisibles();
 	}
 
 }
